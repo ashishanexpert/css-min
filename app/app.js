@@ -165,7 +165,7 @@
         GE("cssOut").value = sign + cssArray.join(newlineBlocks ? "\n" : "");
 
         // GA
-        _gaq.push(['_trackEvent', 'Buttons', "Submit", gtracker]);
+        //_gaq.push(['_trackEvent', 'Buttons', "Submit", gtracker]);
 
         // Preventing Default Form Submission
         event.preventDefault();
