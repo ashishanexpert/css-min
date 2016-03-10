@@ -1,12 +1,12 @@
 /*
-		Author	: Ashish Kumar
-		App		: CSS Minifier | Beautifier
-		Version	: 2.1 (Un-compressed)
-		Date	: Feb 18, 2014
+    Author	: Ashish Kumar
+    App		: CSS Minifier | Beautifier
+    Version	: 2.1 (Un-compressed)
+    Date	: Feb 18, 2014
 
-		Last Modified: 21/02/2014
-		Note	: HEX Color Optimization
-	*/
+    Last Modified: 21/02/2014
+    Note	: HEX Color Optimization
+*/
 (function (Doc) {
     "use strict";
 
@@ -26,55 +26,67 @@
         checkIndention = GE("indention"),
         checkComments = GE("removeComments"),
         sign = "/*CSS Optimized by: CSS Beautifer, KumarAshish.com*/\n";
+    
+    var $el = {
+        btn :GE("btn"),
+        radioMinify :GE("minify"),
+        radioBeautify :GE("beautify"),
+        optionMinify :GE("minifyOptions"),
+        optionBeautify :GE("beautifyOptions"),
+
+        checkNewLineSelector :GE("newlineBlocks"),
+        checkSpace :GE("space"),
+        checkNewLineProp :GE("newlineRules"),
+        checkIndention :GE("indention"),
+        checkComments :GE("removeComments"),
+        
+        form: GE("dataform")
+    };
+    
+    function doMagic(isMinify){
+        $el.optionMinify.style.height = isMinify ? "70px" : 0;
+        $el.optionBeautify.style.height = isMinify ? 0 :"70px";
+
+        $el.checkNewLineSelector.checked = !!isMinify;
+        $el.checkSpace.checked = !isMinify;
+        $el.checkNewLineProp.checked = !isMinify;
+        $el.checkIndention.checked = !isMinify;
+
+        $el.checkComments.checked = !!isMinify;
+        $el.checkComments.disabled = !!isMinify;
+
+        $el.btn.value = isMinify ? "Minify It!" : "Beautify It!";
+    }
 
     // Choosing options
     radioMinify.onclick = function () {
-        optionMinify.style.height = "70px";
-        optionBeautify.style.height = 0;
-
-        checkNewLineSelector.checked = true;
-        checkSpace.checked = false;
-        checkNewLineProp.checked = false;
-        checkIndention.checked = false;
-
-        checkComments.checked = true;
-        checkComments.disabled = true;
-
-        btn.value = "Minify It!";
+        doMagic(true);
     };
 
     radioBeautify.onclick = function () {
-        optionMinify.style.height = 0;
-        optionBeautify.style.height = "70px";
-
-        checkNewLineSelector.checked = false;
-        checkSpace.checked = true;
-        checkNewLineProp.checked = true;
-        checkIndention.checked = true;
-        checkIndention.disabled = false;
-        checkComments.disabled = false;
-
-        btn.value = "Beautify It!";
+        doMagic();
     };
 
     // Do Action
-    GE("dataform").onsubmit = function (event) {
+    $el.form.onsubmit = function (event) {
 
         var inputStr = GE("cssIn").value.trim(),
             regToClear = /\/\*(?:(?!\*\/)[\s\S])*\*\/|[\r\n\t]+/g,
             cssArray,
-            uncompress = checkNewLineProp.checked,
-            indention = checkIndention.checked,
-            newlineBlocks = checkNewLineSelector.checked,
+            uncompress = $el.checkNewLineProp.checked,
+            indention = $el.checkIndention.checked,
+            newlineBlocks = $el.checkNewLineSelector.checked,
             doSorting = GE("sort").checked,
-            removeComments = checkComments.checked,
-            gtracker = radioMinify.checked ? "Minify" : "Beautify",
+            removeComments = $el.checkComments.checked,
+            gtracker = $el.radioMinify.checked ? "Minify" : "Beautify",
 
             regHexColor = /#([A-Fa-f0-9]{6})/gi, ///^#([A-Fa-f0-9]{6})$/,
             regLongColor = /([a-fA-F,0-9])\1/gi;
 
         // Removing Comments, Newlines, Tabs
-        if (removeComments) inputStr = inputStr.replace(regToClear, "");
+        if (removeComments) {
+            inputStr = inputStr.replace(regToClear, "");
+        }
 
         cssArray = inputStr.split("}");
 
