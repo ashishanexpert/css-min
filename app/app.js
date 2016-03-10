@@ -43,7 +43,7 @@
         form: GE("dataform")
     };
     
-    function doMagic(isMinify){
+    function setAction(isMinify){
         $el.optionMinify.style.height = isMinify ? "70px" : 0;
         $el.optionBeautify.style.height = isMinify ? 0 :"70px";
 
@@ -60,11 +60,11 @@
 
     // Choosing options
     radioMinify.onclick = function () {
-        doMagic(true);
+        setAction(true);
     };
 
     radioBeautify.onclick = function () {
-        doMagic();
+        setAction();
     };
 
     // Do Action

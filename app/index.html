@@ -8,9 +8,26 @@
 <body>
 	<div id="fb-root"></div>
 	<div class="container">
-		<form id="dataform">
+		<form id="app">
 			<div class="header"><h1>Minify | Beautify your CSS!</h1></div>
-			<textarea id="cssIn" placeholder="paste your css here"></textarea>
+			<textarea id="cssIn" placeholder="paste your css here">* {
+    margin: 0;
+    padding: 0
+}
+
+a {
+    color: rgb(0, 0, 238)
+}
+
+label {
+    cursor: pointer
+}
+
+#btn,
+.options {
+    -webkit-transition: .2s linear;
+    transition: 0.2s linear
+}</textarea>
 			
 			<div class="settings flt">
 				<div class="flt">
@@ -50,6 +67,6 @@
 		</div>
 	</div>
     
-    <script src="app.js"></script>
+    <script src="app-2.js"></script>
 </body>
 </html>
