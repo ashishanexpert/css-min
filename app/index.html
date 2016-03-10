@@ -1,0 +1,92 @@
+
+
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>Beautify | Minify your Css : Online code compressor for Cascading Style Sheets</title>
+	<meta name="description" content="Beautify or Minify CSS code to compress file size and make your sites load faster for free." />
+	<meta name="keywords" content="css beautifier,style sheets,style,cascading style sheets,css,css compress,css compressor,compress css,css code,optimize css,css compression" />
+	<meta property="og:image" content="http://ashishkumar.asia/labs/cssmin/fb-share.jpg" />
+	<meta property="og:title" content="Beautify | Minify your Css : Online code beautifier and code compressor for CSS"/>
+	<meta property="og:site_name" content="AshishKumar.asia"/>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+	(function(i,s,o,g,r,a,m){i['GoogleAnalyticsObject']=r;i[r]=i[r]||function(){
+	(i[r].q=i[r].q||[]).push(arguments)},i[r].l=1*new Date();a=s.createElement(o),
+	m=s.getElementsByTagName(o)[0];a.async=1;a.src=g;m.parentNode.insertBefore(a,m)
+	})(window,document,'script','//www.google-analytics.com/analytics.js','ga');
+
+	ga('create', 'UA-27004100-2', 'ashishkumar.asia');
+	ga('send', 'pageview');
+	
+	var _gaq = _gaq || [];
+	_gaq.push(['_setAccount', 'UA-XXXXX-X']);
+	_gaq.push(['_trackPageview']);
+
+	(function() {
+	var ga = document.createElement('script'); ga.type = 'text/javascript'; ga.async = true;
+	ga.src = ('https:' == document.location.protocol ? 'https://ssl' : 'http://www') + '.google-analytics.com/ga.js';
+	var s = document.getElementsByTagName('script')[0]; s.parentNode.insertBefore(ga, s);
+	})();
+	</script>
+</head>
+<body>
+	<div id="fb-root"></div>
+	<div class="container">
+		<form id="dataform">
+			<div class="header"><h1>Minify | Beautify your CSS!</h1></div>
+			<textarea id="cssIn" placeholder="paste your css here"></textarea>
+			
+			<div class="settings flt">
+				<div class="flt">
+					<h2>What you want to do?</h2>
+					<div class="what-to-do flt">
+						<label><input type="radio" name="whattodo" id="minify" checked="checked" /> Minify</label>
+						<label><input type="radio" name="whattodo" id="beautify" /> Beautify</label>
+
+						<div class="options" id="minifyOptions">
+							<label><input type="checkbox" id="newlineBlocks" checked="checked" /> New line between selectors</label>
+							<label><input type="checkbox" id="space" checked="checked" /> <span> Space  between properties</span></label>
+						</div>
+
+						<div class="options" id="beautifyOptions">
+							<label><input type="checkbox" id="newlineRules" disabled="disabled" /> New line between properties</label>
+							<label><input type="checkbox" id="indention" /> <span> Indent properties</span></label>
+						</div>
+					</div>
+					<div class="other-settings flt">
+						<h3>Other Settings</h3>
+						<label><input type="checkbox" id="sort" checked="checked" /> Sort properties in Alphabetical Order</label>
+						<label><input type="checkbox" id="removeComments" checked="checked" disabled="disabled" /> Remove Comments</label>
+					</div>
+
+					<div class="clr"></div>
+				</div>
+			</div>
+			<div class="btn flr">
+				<input type="submit" value="Minify it!" id="btn" />
+			</div>
+			<div class="clr"></div>
+			<textarea id="cssOut" readonly></textarea>
+		</form>
+		<div class="footer">
+			<div class="fb-like flt" data-href="http://lab.kumarashish.com/cssmin/" data-layout="button_count" data-action="like" data-show-faces="true" data-share="true"></div>
+			Copyrights &copy 2016, <a href="http://lab.kumarashish.com?ref=cssMinifier" target="_blank">KumarAshish.com</a>
+			<div class="clr"></div>
+		</div>
+	</div>
+    
+    <script src="app.js"></script>
+	<script type="text/javascript">
+	// FB
+	(function(d, s, id) {
+	  var js, fjs = d.getElementsByTagName(s)[0];
+	  if (d.getElementById(id)) return;
+	  js = d.createElement(s); js.id = id;
+	  js.src = "//connect.facebook.net/en_US/all.js#xfbml=1&appId=237091976415444";
+	  fjs.parentNode.insertBefore(js, fjs);
+	}(document, 'script', 'facebook-jssdk'));
+	</script>
+</body>
+</html>
